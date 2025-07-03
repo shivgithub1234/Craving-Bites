@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/8f5b0989-3f42-4236-8c75-7c5c6d1ae16b)
+![image](https://github.com/user-attachments/assets/5b2ecf50-1c90-44b3-afdf-8328e03dac66)
+
 
 
 Crave Bites: A Food Delivery App
