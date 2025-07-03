@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/8f5b0989-3f42-4236-8c75-7c5c6d1ae16b)
+
+
 Crave Bites: A Food Delivery App
 
 Crave Bites is a full-featured, responsive food delivery application built using the MERN stack (MongoDB, Express, React, Node.js) with Stripe payment integration. This project delivers a seamless experience for customers, administrators, and delivery personnel, combining a user-friendly frontend, a robust backend, and an intuitive admin panel into a single, comprehensive platform. 
