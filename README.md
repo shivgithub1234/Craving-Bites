@@ -1,3 +1,7 @@
+![image](https://github.com/user-attachments/assets/5b2ecf50-1c90-44b3-afdf-8328e03dac66)
+
+
+
 Crave Bites: A Food Delivery App
 
 Crave Bites is a full-featured, responsive food delivery application built using the MERN stack (MongoDB, Express, React, Node.js) with Stripe payment integration. This project delivers a seamless experience for customers, administrators, and delivery personnel, combining a user-friendly frontend, a robust backend, and an intuitive admin panel into a single, comprehensive platform. 
@@ -78,4 +82,4 @@ Tomato/
  Contribution Guidelines
 Feel free to contribute to Tomato by forking this repository, creating a new branch, and submitting a pull request. Please make sure to follow standard coding practices and add meaningful comments to your code.
 
-Enjoy exploring the code and features of Tomato, and feel free to reach out for any questions or suggestions!
+Enjoy exploring the code and features of Craving Bites, and feel free to reach out for any questions or suggestions!
