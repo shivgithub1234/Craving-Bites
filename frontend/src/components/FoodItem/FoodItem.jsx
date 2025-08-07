@@ -8,10 +8,34 @@ const FoodItem = ({ image, name, price, desc , id }) => {
     const [itemCount, setItemCount] = useState(0);
     const {cartItems,addToCart,removeFromCart,url} = useContext(StoreContext);
 
+    
+    const getImageSrc = () => {
+        
+        if (typeof image === 'string') {
+            // If the string does NOT start with 'http', '/', or 'blob:' and ends with an image extension, use backend
+            if (
+                (image.endsWith('.jpg') || image.endsWith('.png') || image.endsWith('.jpeg') || image.endsWith('.webp')) &&
+                !image.startsWith('http') && !image.startsWith('/') && !image.startsWith('blob:')
+            ) {
+                return url + "/images/" + image;
+            }
+            
+            return image;
+        }
+       
+        return image;
+    };
+
+    // Fallback image (logo) if image fails to load
+    const handleImgError = (e) => {
+        e.target.onerror = null;
+        e.target.src = assets.logo;
+    };
+
     return (
         <div className='food-item'>
             <div className='food-item-img-container'>
-                <img className='food-item-image' src={url+"/images/"+image} alt="" />
+                <img className='food-item-image' src={getImageSrc()} alt={name} onError={handleImgError} />
                 {!cartItems[id]
                 ?<img className='add' onClick={() => addToCart(id)} src={assets.add_icon_white} alt="" />
                 :<div className="food-item-counter">

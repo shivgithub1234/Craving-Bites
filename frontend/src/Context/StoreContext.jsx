@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { food_list, menu_list } from "../assets/assets";
+import { food_list as staticFoodList, menu_list } from "../assets/assets";
 import axios from "axios";
 export const StoreContext = createContext(null);
 
@@ -42,13 +42,29 @@ const StoreContextProvider = (props) => {
     }
 
     const fetchFoodList = async () => {
-        const response = await axios.get(url + "/api/food/list");
-        setFoodList(response.data.data)
+        try {
+            const response = await axios.get(url + "/api/food/list");
+            // If backend returns data, use it; otherwise use static food list
+            if (response.data.success && response.data.data && response.data.data.length > 0) {
+                setFoodList(response.data.data);
+            } else {
+                // Use static food list as fallback
+                setFoodList(staticFoodList);
+            }
+        } catch (error) {
+            console.log("Error fetching food list from backend, using static data:", error);
+            // Use static food list as fallback when backend fails
+            setFoodList(staticFoodList);
+        }
     }
 
     const loadCartData = async (token) => {
-        const response = await axios.post(url + "/api/cart/get", {}, { headers: token });
-        setCartItems(response.data.cartData);
+        try {
+            const response = await axios.post(url + "/api/cart/get", {}, { headers: token });
+            setCartItems(response.data.cartData);
+        } catch (error) {
+            console.log("Error loading cart data:", error);
+        }
     }
 
     useEffect(() => {
